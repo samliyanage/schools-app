@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
 import com.sblsoft.schoolswebapp.model.School;
@@ -40,16 +39,26 @@ public class SchoolService implements com.sblsoft.schoolswebapp.service.Reposito
 	}
 
 	public School updateObject(String id, School school) {
-		//Update update = new Update();  
-		//update.
-		//update.
-		//inc("name", school.getName()); 
-		mongoTemplate.updateFirst(
-				new Query(Criteria.where("id").is(id)),
-				Update.update("name", school.getName()), School.class);
-		// updateFirst(
-		// new Query(Criteria.where("id").is(id)),
-		// Update.update("name", school.getName()), School.class);
+		
+		School schoolObject=getObjectById(id);
+		
+		if(school.getName()!=null && !"".equals(school.getName()) ){
+			schoolObject.setName(school.getName());
+		}
+		
+		if(school.getCode()!=null && !"".equals(school.getCode()) ){
+			schoolObject.setCode(school.getCode());
+		}
+		
+		if(school.getAddress()!=null && !"".equals(school.getAddress()) ){
+			schoolObject.setAddress(school.getAddress());
+		}
+		
+		if(school.getEmailDomain()!=null && !"".equals(school.getEmailDomain()) ){
+			schoolObject.setEmailDomain(school.getEmailDomain());
+		}
+		mongoTemplate.save(schoolObject);
+		
 		return getObjectById(id);
 	}
 
