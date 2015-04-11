@@ -22,7 +22,7 @@ Apple OSX 10.10 Chrome/Safari
 
 Steps to follow in deploying web application.
 
-01)	Install the relevent softwares and plugings that mentioned as Pre-requisites.
+01)	Install the relevant softwares and plugigns that mentioned as Pre-requisites.
 
 02) Clone or Download the Maven project from github.
 
@@ -36,4 +36,4 @@ Steps to follow in deploying web application.
 
 05) To manage/view school records, use the following URL.
 
-	http://{Host_Name}:{Port}/schoolApp/
+	http://{Host_Name}:{Port}/schoolWebApp/

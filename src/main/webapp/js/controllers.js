@@ -3,9 +3,9 @@ angular.module('schoolApp.controllers',[]).controller('SchoolListController',fun
 
     $scope.schools=School.query();
 
-    $scope.deleteStudent=function(school){
+    $scope.deleteSchool=function(school){
         if(popupService.showPopup('Really want to delete this record?')){
-        	student.$delete(function(){
+        	school.$delete(function(){
                 $window.location.href='/schoolApp';
             });
         }
@@ -33,7 +33,7 @@ angular.module('schoolApp.controllers',[]).controller('SchoolListController',fun
         });
     };
 
-    $scope.loadStudent=function(){
+    $scope.loadSchool=function(){
         $scope.school=School.get({id:$stateParams.id});
     };
 
