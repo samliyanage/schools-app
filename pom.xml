@@ -73,6 +73,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>schools-webapp</finalName>
+		<finalName>schoolWebApp</finalName>
 	</build>
 </project>

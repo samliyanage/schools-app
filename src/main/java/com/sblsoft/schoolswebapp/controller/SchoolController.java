@@ -19,32 +19,31 @@ public class SchoolController {
 	@Autowired
 	Repository<School> repository;
 	
-	private static final String API_CONTEXT = "/api/v1";
 
-	@RequestMapping(value = API_CONTEXT+"/schools", method = RequestMethod.GET)
+	@RequestMapping(value = "/schools", method = RequestMethod.GET)
 	public List<School> listAllSchools(Model model) {
 
 		return repository.listObjects();
 	}
 
-	@RequestMapping(value = API_CONTEXT+"/school", method = RequestMethod.POST)
+	@RequestMapping(value = "/schools", method = RequestMethod.POST)
 	public School addSchool(@RequestBody School school) {
 		return repository.addObject(school);
 	}
 
-	@RequestMapping(value = API_CONTEXT+"/school/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/schools/{id}", method = RequestMethod.GET)
 	public School getSchoolById(@PathVariable("id") String id) {
 		return repository.getObjectById(id);
 	}
 
-	@RequestMapping(value = API_CONTEXT+"/school/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/schools/{id}", method = RequestMethod.PUT)
 	public School updateSchool(@PathVariable("id") String id,
 			@RequestBody School school) {
 
 		return repository.updateObject(id, school);
 	}
 
-	@RequestMapping(value = API_CONTEXT+"/school/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/schools/{id}", method = RequestMethod.DELETE)
 	public void deleteSchool(@PathVariable("id") String id) {
 		repository.deleteObject(id);
 	}
