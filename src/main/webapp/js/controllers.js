@@ -1,11 +1,12 @@
-angular.module('schoolWebApp.controllers',[]).controller('SchoolListController',function($scope,$state,popupService,$window,School){
+
+angular.module('schoolApp.controllers',[]).controller('SchoolListController',function($scope,$state,popupService,$window,School){
 
     $scope.schools=School.query();
 
-    $scope.deleteSchool=function(school){
-        if(popupService.showPopup('Really want to delete this school?')){
-        	school.$delete(function(){
-                $window.location.href='';
+    $scope.deleteStudent=function(school){
+        if(popupService.showPopup('Really want to delete this record?')){
+        	student.$delete(function(){
+                $window.location.href='/schoolApp';
             });
         }
     }
@@ -32,7 +33,7 @@ angular.module('schoolWebApp.controllers',[]).controller('SchoolListController',
         });
     };
 
-    $scope.loadSchool=function(){
+    $scope.loadStudent=function(){
         $scope.school=School.get({id:$stateParams.id});
     };
 

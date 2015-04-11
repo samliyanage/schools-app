@@ -1,15 +1,21 @@
-<a ui-sref="newSchool" class="btn-primary btn-lg nodecoration">Add New School</a>
- 
+<a ui-sref="newSchool" class="btn-primary btn-lg nodecoration">Import new school</a>
 <table class="table schooltable">
-  <tr>
-    <td><h3>All Schools</h3></td>
-    <td></td>
-  </tr>
-  <tr ng-repeat="school in schools">
-    <td>{{school.name}}</td>
-    <td>
-      <a class="btn btn-primary" ui-sref="viewSchool({id:school.id})">View</a>
-      <a class="btn btn-danger"  ng-click="deleteSchool(school)">Delete</a>
-    </td>
-  </tr>
+    <tr>
+        <td><h3>Available schools</h3></td>
+        <td></td>
+    </tr>
+</table>
+<table class="table schoolttable">
+    <tr>
+        <th>Name</th>
+        <th>Code</th>
+    </tr>
+    <tr ng-repeat="school in schools">
+        <td>{{school.name}}</td>
+        <td>{{school.code}}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewSchool({id:school.id})">View Details</a>
+            <a class="btn btn-danger"  ng-click="deleteSchool(school)">Remove</a>
+        </td>
+    </tr>
 </table>

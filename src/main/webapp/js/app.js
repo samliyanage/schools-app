@@ -1,6 +1,7 @@
-angular.module('schoolWebApp',['ui.router','ngResource','schoolWebApp.controllers','schoolWebApp.services']);
 
-angular.module('schoolWebApp').config(function($stateProvider,$httpProvider){
+angular.module('schoolApp',['ui.router','ngResource','schoolApp.controllers','schoolApp.services']);
+
+angular.module('schoolApp').config(function($stateProvider,$httpProvider){
     $stateProvider.state('schools',{
         url:'/schools',
         templateUrl:'schoolWebApp/partials/schools.html',
