@@ -36,4 +36,4 @@ Steps to follow in deploying web application.
 
 05) To manage/view school records, use the following URL.
 
-	http://{Host_Name}:{Port}/studentApp/
+	http://{Host_Name}:{Port}/schoolApp/
