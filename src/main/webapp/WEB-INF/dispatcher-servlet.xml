@@ -12,22 +12,27 @@
        http://www.springframework.org/schema/context 
        http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
+	<context:property-placeholder location="classpath:application.properties" />
+
  
     <context:component-scan base-package="com.sblsoft.schoolswebapp" />
+    
+   
  
     <!-- Factory bean that creates the Mongo instance -->
     <bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
-        <property name="host" value="localhost" />
+        <property name="host" value="${db.host}" />
     </bean>
      
     <!-- MongoTemplate for connecting and quering the documents in the database -->
     <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
         <constructor-arg name="mongo" ref="mongo" />
-        <constructor-arg name="databaseName" value="test" />
+        <constructor-arg name="databaseName" value="${db.name}" />
     </bean>
  
     <!-- Use this post processor to translate any MongoExceptions thrown in @Repository annotated classes -->
     <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+    
     
     <mvc:annotation-driven />
           

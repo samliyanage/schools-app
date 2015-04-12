@@ -28,11 +28,16 @@ Steps to follow in deploying web application.
 
    	https://github.com/samliyanage/schools-app/
 
-03 	Build the project with maven using following command
+03) Configure the following database connectivity fields in  {Project_Location}/src/main/resources/application.properties.
+
+	db.host 	- Host name of the MongoDB database (e.g.: localhost).
+	db.name 	- Database name of the MongoDB.
+
+04) Build the project with maven using following command
 
 	{Project_Location}>mvn clean install 
 
-04) Deploy the "schoolWebApp.war" file that built in step [3].
+05) Deploy the "schoolWebApp.war" file that built in step [4].
 
 05) To manage/view school records, use the following URL.
 
