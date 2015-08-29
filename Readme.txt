@@ -11,7 +11,7 @@ Used Technologies/Frameworks
 
 Java EE 2.5
 Spring MVC v4.0
-Spring Integrated RESTFul web services
+Spring Integrated Restful web services
 Spring Data MongoDB v1.2
 AngularJS v1.2.27
 Bootstrap v2.3.2
@@ -22,9 +22,9 @@ Apple OSX 10.10 Chrome/Safari
 
 Steps to follow in deploying web application.
 
-01)	Install the relevant softwares and plugigns that mentioned as Pre-requisites.
+01)	Install the relevant softwares and plugins that mentioned as Pre-requisites.
 
-02) Clone or Download the Maven project from github.
+02) Clone or Download the Maven project from Github.
 
    	https://github.com/samliyanage/schools-app/
 
