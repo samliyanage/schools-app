@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import com.sblsoft.schoolswebapp.model.School;
 
-@Repository
 public class SchoolService implements com.sblsoft.schoolswebapp.service.Repository<School> {
 
 	@Autowired
